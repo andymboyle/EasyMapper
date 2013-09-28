@@ -5,7 +5,7 @@ The Easy Mapper shows you how to connect a Google doc to a Django application, p
 
 # Getting started
 
-`pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 Then make sure your postgres is up
 `pgup
