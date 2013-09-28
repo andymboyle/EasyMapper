@@ -1,0 +1,11 @@
+Django==1.5
+fabric==1.4.3
+gdata==2.0.17
+geopy==0.95.1
+gevent==0.13.8
+greenlet==0.4.0
+gunicorn==0.14.6
+psycopg2==2.3.2
+pycrypto==2.3
+python-dateutil==2.1
+python-memcached
