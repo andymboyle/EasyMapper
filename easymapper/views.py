@@ -1,10 +1,23 @@
 from django.core import serializers
+from django.shortcuts import render
 from django.http import HttpResponse as response
 
 from sirensapi.models import Location
 
 
+def locations(request):
+
+    return render(request, 'index.html', {
+        'locations': Location.objects.all(),
+    })
+
+
 def json_full_feed(request):
+    """
+    This is if you want to make an API of all of the data,
+    but for this project we'll just be spitting it out onto
+    a single page.
+    """
     json_data = serializers.serialize(
         "json", Location.objects.all())
 
