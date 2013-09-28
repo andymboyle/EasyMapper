@@ -25,7 +25,7 @@ In the psql shell you'll need to create your postgis extensions and whatnot. So 
 
 ```CREATE EXTENSION postgis;```
 
-```CREATE EXTENSION postgis_topology;```
+```CREATE EXTENSION postgis_topology;
 
 
 ```\q
