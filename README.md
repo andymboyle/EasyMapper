@@ -9,7 +9,7 @@ The Easy Mapper shows you how to connect a Google doc to a Django application, p
 
 Then make sure your postgres is up
 
-```pgup
+```pgup```
 
 I have an alias in my .zshrc (or put it in your bash_profile) like so:
 
@@ -25,15 +25,16 @@ Now enter the postgres shell:
 
 In the psql shell you'll need to create your postgis extensions and whatnot. So enter this in the shell:
 
-```CREATE EXTENSION postgis;
-CREATE EXTENSION postgis_topology;
-\q```
+```CREATE EXTENSION postgis;```
+```CREATE EXTENSION postgis_topology;```
+```\q```
 
 Now you should have the proper things to sync your database. Do this from your project root (where the manage.py file is):
 
 ```python manage.py syncdb```
 
 OR run it all as one line:
+
 ```createdb easymapper && psql -c "create extension postgis; create extension postgis_topology;" easymapper && ./manage.py syncdb```
 
 
