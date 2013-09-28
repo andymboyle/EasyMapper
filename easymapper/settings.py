@@ -1,4 +1,11 @@
+import django
+import os
+
+VERSION = 0.1
+
 # Django settings for easymapper project.
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
+SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -16,6 +23,14 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432'
     },
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+        'TIMEOUT': 10800
+    }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -87,6 +102,14 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+# added after reading http://stackoverflow.com/questions/2882490/get-the-current-url-within-a-django-template
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.static',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -103,9 +126,9 @@ ROOT_URLCONF = 'easymapper.urls'
 WSGI_APPLICATION = 'easymapper.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    SITE_ROOT + "/templates",
 )
 
 INSTALLED_APPS = (
@@ -117,14 +140,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
 )
 
 # May need to change this
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+
+
+SERIALIZATION_MODULES = {
+    'json': 'wadofstuff.django.serializers.json'
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
