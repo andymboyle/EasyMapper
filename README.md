@@ -25,10 +25,9 @@ In the psql shell you'll need to create your postgis extensions and whatnot. So 
 
 ```CREATE EXTENSION postgis;```
 
-```CREATE EXTENSION postgis_topology;
+```CREATE EXTENSION postgis_topology;```
 
-
-```\q
+```\q```
 
 Now you should have the proper things to sync your database. Do this from your project root (where the manage.py file is):
 
