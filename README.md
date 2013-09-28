@@ -15,7 +15,7 @@ I have an alias in my .zshrc (or put it in your bash_profile) to turn my postgre
 
 Then make sure your postgres is up:
 
-```pgup```
+```postgresup```
 
 Next, let's create the database for this application:
 
