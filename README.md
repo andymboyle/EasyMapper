@@ -9,7 +9,7 @@ The Easy Mapper shows you how to connect a Google doc to a Django application, p
 
 Then make sure your postgres is up
 
-```pgup```
+```pgup
 
 I have an alias in my .zshrc (or put it in your bash_profile) like so:
 
