@@ -13,11 +13,7 @@ I have an alias in my .zshrc (or put it in your bash_profile) to turn my postgre
 
 ```alias pgup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'```
 
-Then make sure your postgres is up:
-
-```whywontthiswork```
-
-Next, let's create the database for this application:
+Then turn on postgres with the pgup command. Next, let's create the database for this application:
 
 ```createdb easymapper```
 
