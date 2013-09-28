@@ -49,7 +49,7 @@ def geocode_address(sender, instance, **kwargs):
         counter = 0
         while True:
             try:
-                # Change this to not use bing
+                # TODO: Test this syntax works for us geocoder
                 result = list(us.geocode(
                     instance.address, exactly_one=False))
 
@@ -74,4 +74,4 @@ def geocode_address(sender, instance, **kwargs):
 
 pre_save.connect(
     geocode_address, sender=Location,
-    dispatch_uid="geocode_shooting_address")
+    dispatch_uid="geocode_location_address")
