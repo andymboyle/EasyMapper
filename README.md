@@ -5,15 +5,17 @@ The Easy Mapper shows you how to connect a Google doc to a Django application, p
 
 # Getting started
 
+First, install your requirements:
+
 ```pip install -r requirements.txt```
 
-Then make sure your postgres is up
-
-```pgup```
-
-I have an alias in my .zshrc (or put it in your bash_profile) like so:
+I have an alias in my .zshrc (or put it in your bash_profile) to turn my postgres on:
 
 ```alias pgup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'```
+
+Then make sure your postgres is up:
+
+```pgup```
 
 Next, let's create the database for this application:
 
