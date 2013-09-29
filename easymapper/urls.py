@@ -7,4 +7,5 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns(
     '',
     url(r'^$', 'easymapper.views.locations', name='locations'),
+    url(r'^$', 'easymapper.views.json_full_feed', name='json_full_feed'),
 )
