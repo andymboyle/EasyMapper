@@ -7,7 +7,9 @@ from urllib2 import HTTPError
 import logging
 logger = logging.getLogger(__name__)
 
-from easymapper.lib.geocoders import GeocoderDotUS as us
+from geopy import geocoders
+
+us = geocoders.GeocoderDotUS()
 
 
 class Location(models.Model):
