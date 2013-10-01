@@ -2,7 +2,7 @@ from django.core import serializers
 from django.shortcuts import render
 from django.http import HttpResponse as response
 
-from sirensapi.models import Location
+from easymapper.models import Location
 
 
 def locations(request):
