@@ -1,4 +1,4 @@
-Django==1.11.18
+Django==2.1
 fabric==1.4.3
 gdata==2.0.17
 geopy==0.95.1
